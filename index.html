@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cyber Case Files</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="app-header">
+      <div>
+        <h1>Cyber Case Files</h1>
+        <p class="tagline">Investigate. Analyse. Secure.</p>
+      </div>
+      <div class="score-panel">
+        <span id="scoreLabel">Score: 100</span>
+        <span id="rankLabel">Rank: Chief Analyst</span>
+      </div>
+    </header>
+
+    <main>
+      <section id="homeScreen" class="screen active">
+        <div class="card">
+          <h2>Welcome, Detective</h2>
+          <p>
+            You will investigate real-world cyber incidents, collect evidence, identify the attack,
+            and plan smart prevention strategies.
+          </p>
+          <div class="option-row">
+            <label for="difficulty">Difficulty:</label>
+            <select id="difficulty">
+              <option value="easy">Easy (more hints)</option>
+              <option value="standard" selected>Standard (fewer hints)</option>
+            </select>
+          </div>
+          <label class="toggle">
+            <input type="checkbox" id="teacherMode" />
+            <span>Teacher Mode (show model answers & explanations)</span>
+          </label>
+          <button id="startBtn" class="primary">Start Case Files</button>
+        </div>
+      </section>
+
+      <section id="caseSelect" class="screen">
+        <h2>Select a Case</h2>
+        <div id="caseList" class="case-grid"></div>
+      </section>
+
+      <section id="caseScreen" class="screen">
+        <div class="case-header">
+          <div>
+            <h2 id="caseTitle">Case Title</h2>
+            <p id="caseBrief">Case briefing appears here.</p>
+          </div>
+          <div class="phase-indicator">
+            <span id="phaseLabel">Phase 1: Evidence Room</span>
+            <button id="hintBtn" class="ghost">Need a hint?</button>
+          </div>
+        </div>
+
+        <div id="phaseContent" class="phase-content"></div>
+
+        <div class="phase-footer">
+          <button id="backBtn" class="ghost">Back</button>
+          <button id="nextBtn" class="primary">Next Phase</button>
+        </div>
+      </section>
+
+      <section id="endScreen" class="screen">
+        <div class="card">
+          <h2>Case Closed</h2>
+          <p id="finalScore">Score: 0</p>
+          <p id="finalRank">Rank: Detective</p>
+          <h3>What to remember</h3>
+          <ul id="rememberList"></ul>
+          <button id="returnBtn" class="primary">Return to Case Selection</button>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Made for Year 9 cybersecurity learning. No logins. Works offline after load.</p>
+    </footer>
+  </div>
+
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <h3 id="modalTitle">Hint</h3>
+      <p id="modalBody"></p>
+      <button id="modalClose" class="primary">Got it</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
